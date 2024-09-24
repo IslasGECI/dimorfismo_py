@@ -10,3 +10,6 @@ def test_split_data() -> None:
     test_data: pd.DataFrame = splited_data["to_test"]
     expected_n_row = 3
     assert len(test_data) == expected_n_row, "The number of row is right"
+    fit_data: pd.DataFrame = splited_data["to_fit"]
+    expected_n_row_to_fit = 12
+    assert len(fit_data) == expected_n_row_to_fit, "The number of row to fit is right"
