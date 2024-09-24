@@ -18,26 +18,17 @@ def test_split_data() -> None:
 
 @pytest.mark.xfail(strict=True)
 def test_split_data_are_differents() -> None:
-    splited_data: dict = dt.split_data(full_data)
     fit_data: pd.DataFrame = splited_data["to_fit"]
     pd.testing.assert_frame_equal(full_data[:12], fit_data)
 
 
 @pytest.mark.xfail(strict=True)
 def test_split_data_are_differents_to_Test() -> None:
-    full_data: pd.DataFrame = pd.read_csv(
-        "/workdir/tests/data/laysan_albatross_morphometry_guadalupe.csv"
-    )
-    splited_data: dict = dt.split_data(full_data)
     test_data: pd.DataFrame = splited_data["to_test"]
     pd.testing.assert_frame_equal(full_data[12:], test_data)
 
 
 def test_split_data_are_differents_rows() -> None:
-    full_data: pd.DataFrame = pd.read_csv(
-        "/workdir/tests/data/laysan_albatross_morphometry_guadalupe.csv"
-    )
-    splited_data: dict = dt.split_data(full_data)
     test_data: pd.DataFrame = splited_data["to_test"]
     fit_data: pd.DataFrame = splited_data["to_fit"]
     index_to_fit = set(fit_data.index)
