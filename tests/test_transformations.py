@@ -11,4 +11,5 @@ def test_add_offset():
 
 
 def test_split_data() -> None:
-    _ = pd.read_csv("/workdir/tests/data/laysan_albatross_morphometry_guadalupe.csv")
+    full_data = pd.read_csv("/workdir/tests/data/laysan_albatross_morphometry_guadalupe.csv")
+    _ = dt.split_data(full_data)
