@@ -14,7 +14,7 @@ all: check coverage mutants
 		tests
 
 module = dimorfism
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+codecov_token = a73fa609-da5f-4d07-bcbb-625558f01ba3
 
 define lint
 	pylint \
