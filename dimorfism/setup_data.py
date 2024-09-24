@@ -2,4 +2,4 @@ import pandas as pd
 
 
 def split_data(df: pd.DataFrame) -> dict:
-    return {}
+    return {"to_test": 7}
