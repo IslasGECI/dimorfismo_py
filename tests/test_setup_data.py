@@ -7,4 +7,6 @@ def test_split_data() -> None:
         "/workdir/tests/data/laysan_albatross_morphometry_guadalupe.csv"
     )
     splited_data: dict = dt.split_data(full_data)
-    splited_data["to_test"]
+    test_data: pd.DataFrame = splited_data["to_test"]
+    expected_n_row = 3
+    assert len(test_data) == expected_n_row, "The number of row is right"
