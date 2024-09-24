@@ -7,20 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.4.1] - 2024-04-31
+## [0.0.1] - 2024-09-24
 
 ### Added
 
 ### Fixed
 
 ### Changed
-- Fix repo path
-- Update actions
 
 ### Removed
 
-## [0.4.0] - 2023-08-31
 
-
-[unreleased]: https://github.com/IslasGECI/dummy_transformations/compare/v1.1.1...HEAD
-[0.0.1]: https://github.com/IslasGECI/dummy_transformations/releases/tag/v0.0.1
+[unreleased]: https://github.com/IslasGECI/dimorfismo_py/compare/v1.1.1...HEAD
+[0.0.1]: https://github.com/IslasGECI/dimorfismo_py/releases/tag/v0.0.1
