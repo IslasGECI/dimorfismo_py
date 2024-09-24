@@ -44,7 +44,7 @@ def test_split_data_are_differents_rows() -> None:
     fit_data: pd.DataFrame = splited_data["to_fit"]
     index_to_fit = set(fit_data.index)
     index_to_test = set(test_data.index)
-    obtained_commun = len(index_to_fit and index_to_test)
+    obtained_commun = len(index_to_fit & index_to_test)
     expected_commun = 0
     assert obtained_commun == expected_commun
 
