@@ -10,8 +10,12 @@ splited_data: dict = dt.split_data(full_data)
 
 def test_split_data() -> None:
     test_data: pd.DataFrame = splited_data["to_test"]
-    expected_n_row: int = 3
-    assert len(test_data) == expected_n_row, "The number of row is right"
+    _check_number_of_row_is_right(test_data, 3)
+
+    test_data_y: pd.DataFrame = splited_data["to_test_y"]
+    _check_number_of_row_is_right(test_data_y, 3)
+
+    test_data: pd.DataFrame = splited_data["to_test"]
     fit_data: pd.DataFrame = splited_data["to_fit"]
     _check_number_of_row_is_right(fit_data, 12)
 
