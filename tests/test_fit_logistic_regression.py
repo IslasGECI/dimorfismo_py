@@ -9,3 +9,6 @@ def test_logistic_regression():
     y = numpy.array([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1])
     logr = dt.logistic_regression()
     logr.fit(x, y)
+    expected = [0]
+    obtained = logr.predict(numpy.array([3.46]).reshape(-1, 1))
+    assert expected == obtained, "First example of w3school"
