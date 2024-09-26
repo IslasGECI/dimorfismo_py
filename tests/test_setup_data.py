@@ -37,6 +37,15 @@ def test_split_data_are_differents_to_Test() -> None:
     pd.testing.assert_frame_equal(full_data[12:], test_data)
 
 
+def test_split_test_data_with_right_columns() -> None:
+    test_data: pd.DataFrame = splited_data["to_test"]
+    obtained_colname = test_data.columns
+    not_expexted_colname = {"id_nido", "id_darvic", "subcolonia", "temporada", "notas", "sexo"}
+    obtained_commun = len(not_expexted_colname & set(obtained_colname))
+    expected_commun = 0
+    assert obtained_commun == expected_commun
+
+
 def test_split_data_are_differents_rows() -> None:
     test_data: pd.DataFrame = splited_data["to_test"]
     fit_data: pd.DataFrame = splited_data["to_fit"]
