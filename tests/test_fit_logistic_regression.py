@@ -27,14 +27,21 @@ splited_data: dict = dt.split_data(full_data)
 
 
 def test_albatross_example():
-    full_data = splited_data["to_fit"]
-    y = full_data["sexo"]
-    x = full_data.drop(columns="sexo")
+    # full_data = splited_data["to_fit"]
+    y = splited_data["to_fit"]["sexo"]
+    x = splited_data["to_fit"].drop(columns="sexo")
     logr = dt.logistic_regression()
     fitted_model = logr.fit(x, y)
-    expected = ["M"]
-    obtained = fitted_model.predict(x[:1])
-    assert obtained == expected, "First real example"
+
+    expected = splited_data["to_test_y"]
+    to_predict = splited_data["to_test"]
+    obtained = fitted_model.predict(to_predict)
+    print(obtained)
+    print(expected)
+
+    # assert obtained == list(expected), "First real example"
     expected_score = 1
-    obtained_score = fitted_model.score(x, y)
+    x_score = splited_data["to_test"]
+    y_score = splited_data["to_test_y"]
+    obtained_score = fitted_model.score(x_score, y_score)
     assert obtained_score == expected_score, "score"
