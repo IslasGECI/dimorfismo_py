@@ -24,7 +24,7 @@ def test_test_data_sexo():
     test_data_y: pd.DataFrame = splited_data["to_test_y"]
     expected = "sexo"
     obatined = test_data_y.columns
-    assert obatined == expected
+    assert all(obatined == expected)
 
 
 @pytest.mark.xfail(strict=True)
