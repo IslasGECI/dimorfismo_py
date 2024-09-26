@@ -26,7 +26,7 @@ def extract_sample_to_fit(df):
 
 def obtained_to_test_data(df: pd.DataFrame) -> pd.DataFrame:
 
-    to_test = df.drop(df.sample(frac=0.8, random_state=7).index)
+    to_test = df.drop(extract_sample_to_fit(df).index)
 
     not_wanted_colnames: list = ["id_nido", "id_darvic", "subcolonia", "temporada", "notas", "sexo"]
 
@@ -35,6 +35,6 @@ def obtained_to_test_data(df: pd.DataFrame) -> pd.DataFrame:
 
 def obtained_to_test_data_y(df: pd.DataFrame) -> pd.DataFrame:
 
-    to_test = df.drop(df.sample(frac=0.8, random_state=7).index)
+    to_test = df.drop(extract_sample_to_fit(df).index)
 
     return to_test[["sexo"]]
