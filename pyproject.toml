@@ -10,7 +10,6 @@ description-file = "README.md"
 home-page = "https://github.com/IslasGECI/dimorfismo_py"
 module = "dimorfism"
 requires = [
-    "pandas",
-    "pandas-stubs"
+    "pandas"
 ]
 requires-python=">=3.9"
