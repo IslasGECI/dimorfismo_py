@@ -20,6 +20,13 @@ def test_split_data() -> None:
     _check_number_of_row_is_right(fit_data, 12)
 
 
+def test_test_data_sexo():
+    test_data_y: pd.DataFrame = splited_data["to_test_y"]
+    expected = "sexo"
+    obatined = test_data_y.columns
+    assert obatined == expected
+
+
 @pytest.mark.xfail(strict=True)
 def test_split_data_are_differents() -> None:
     fit_data: pd.DataFrame = splited_data["to_fit"]
