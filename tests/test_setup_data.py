@@ -22,6 +22,15 @@ def test_split_data_are_differents() -> None:
     pd.testing.assert_frame_equal(full_data[:12], fit_data)
 
 
+def test_split_data_with_right_columns() -> None:
+    fit_data: pd.DataFrame = splited_data["to_fit"]
+    obtained_colname = fit_data.columns
+    not_expexted_colname = {"id_nido", "id_darvic", "subcolonia", "temporada", "notas"}
+    obtained_commun = len(not_expexted_colname & set(obtained_colname))
+    expected_commun = 0
+    assert obtained_commun == expected_commun
+
+
 @pytest.mark.xfail(strict=True)
 def test_split_data_are_differents_to_Test() -> None:
     test_data: pd.DataFrame = splited_data["to_test"]
