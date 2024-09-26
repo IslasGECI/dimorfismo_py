@@ -35,6 +35,6 @@ def test_albatross_example():
     expected = ["M"]
     obtained = fitted_model.predict(x[:1])
     assert obtained == expected, "First real example"
-    expected_score = 0.8
+    expected_score = 1
     obtained_score = fitted_model.score(x, y)
     assert obtained_score == expected_score, "score"
