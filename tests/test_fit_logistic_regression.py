@@ -31,7 +31,10 @@ def test_albatross_example():
     y = full_data["sexo"]
     x = full_data.drop(columns="sexo")
     logr = dt.logistic_regression()
-    logr.fit(x, y)
+    fitted_model = logr.fit(x, y)
     expected = ["M"]
-    obtained = logr.predict(x[:1])
+    obtained = fitted_model.predict(x[:1])
     assert obtained == expected, "First real example"
+    expected_score = 0.8
+    obtained_score = fitted_model.score(x, y)
+    assert obtained_score == expected_score, "score"
