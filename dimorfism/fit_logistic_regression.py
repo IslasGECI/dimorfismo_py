@@ -1,2 +1,5 @@
+from sklearn import linear_model
+
+
 def logistic_regression():
-    pass
+    return linear_model.LogisticRegression()
