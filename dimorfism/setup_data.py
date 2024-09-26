@@ -33,6 +33,4 @@ def obtained_to_test_data_y(df: pd.DataFrame) -> pd.DataFrame:
 
     to_test = df.drop(df.sample(frac=0.8, random_state=7).index)
 
-    not_wanted_colnames: list = ["id_nido", "id_darvic", "subcolonia", "temporada", "notas", "sexo"]
-
-    return to_test.drop(columns=not_wanted_colnames)
+    return to_test[["sexo"]]
