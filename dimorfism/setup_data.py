@@ -25,15 +25,6 @@ def split_data(df: pd.DataFrame) -> dict:
     return splitted_data
 
 
-def obtained_to_fit_data(df: pd.DataFrame) -> pd.DataFrame:
-
-    to_fit = extract_sample_to_fit(df)
-
-    not_wanted_colnames: list = ["id_nido", "id_darvic", "subcolonia", "temporada", "notas"]
-
-    return to_fit.drop(columns=not_wanted_colnames)
-
-
 def extract_sample_to_fit(df):
     return df.sample(frac=0.8, random_state=7)
 
