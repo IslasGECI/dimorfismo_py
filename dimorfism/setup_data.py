@@ -15,7 +15,7 @@ def split_data(df: pd.DataFrame) -> dict:
         "subcolonia",
         "temporada",
         "notas",
-        "sexo",
+        target_name,
     ]
     splitted_data = {
         "to_fit": data_train.drop(columns=not_wanted_colnames),
