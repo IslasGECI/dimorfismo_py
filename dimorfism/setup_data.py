@@ -23,23 +23,3 @@ def split_data(df: pd.DataFrame) -> dict:
     }
 
     return splitted_data
-
-
-def extract_sample_to_fit(df):
-    return df.sample(frac=0.8, random_state=7)
-
-
-def obtained_to_test_data(df: pd.DataFrame) -> pd.DataFrame:
-
-    to_test = df.drop(extract_sample_to_fit(df).index)
-
-    not_wanted_colnames: list = ["id_nido", "id_darvic", "subcolonia", "temporada", "notas", "sexo"]
-
-    return to_test.drop(columns=not_wanted_colnames)
-
-
-def obtained_to_test_data_y(df: pd.DataFrame) -> pd.DataFrame:
-
-    to_test = df.drop(extract_sample_to_fit(df).index)
-
-    return to_test[["sexo"]]
