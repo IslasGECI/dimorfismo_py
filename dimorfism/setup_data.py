@@ -3,7 +3,8 @@ from sklearn.model_selection import train_test_split
 
 
 def split_data(df: pd.DataFrame) -> dict:
-    target = df["sexo"]
+    target_name = "sexo"
+    target = df[target_name]
     data_train, data_test, target_train, target_test = train_test_split(
         df, target, random_state=7, train_size=0.8
     )
