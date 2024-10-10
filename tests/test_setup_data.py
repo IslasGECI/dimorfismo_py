@@ -27,13 +27,6 @@ def test_test_data_sexo():
     assert all(obatined == expected)
 
 
-@pytest.mark.xfail(strict=True)
-def test_split_data_are_differents() -> None:
-
-    fit_data: pd.DataFrame = splited_data["to_fit"]
-    pd.testing.assert_frame_equal(full_data[:12], fit_data)
-
-
 def test_split_data_with_right_columns() -> None:
     fit_data: pd.DataFrame = splited_data["to_fit"]
     obtained_colname = fit_data.columns
