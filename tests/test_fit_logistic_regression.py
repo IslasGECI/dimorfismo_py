@@ -35,7 +35,7 @@ def test_albatross_example():
 
     expected = splited_data["to_test_y"]
     to_predict = splited_data["to_test"]
-    obtained = fitted_model.predict(to_predict)
+    obtained = dt.predicted_sex(splited_data)
     print(obtained)
     print(expected)
 
