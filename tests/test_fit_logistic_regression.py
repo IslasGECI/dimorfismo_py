@@ -27,11 +27,7 @@ splited_data: dict = dt.split_data(full_data)
 
 
 def test_albatross_example():
-    # full_data = splited_data["to_fit"]
-    y = splited_data["to_fit_target"]
-    x = splited_data["to_fit"]
-    logr = dt.logistic_regression()
-    fitted_model = logr.fit(x, y)
+    fitted_model = dt.get_fitted_model(splited_data)
 
     expected = splited_data["to_test_y"]
     to_predict = splited_data["to_test"]
