@@ -4,7 +4,7 @@ import pandas as pd
 
 def predicted_sex(splited_data: pd.DataFrame):
     model = logistic_regression()
-    x = splited_data["to_fit"].drop(columns="sexo")
+    x = splited_data["to_fit"]
     y = splited_data["to_fit_target"]
     fitted_model = model.fit(x, y)
 
