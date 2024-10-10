@@ -39,7 +39,7 @@ def test_albatross_example():
     print(obtained)
     print(expected)
 
-    assert (fitted_model.predict(to_predict) == list(expected)).all(), "First real example"
+    assert (obtained == expected.values.flatten()).all(), "First real example"
     expected_score = 2 / 3
     x_score = splited_data["to_test"]
     y_score = splited_data["to_test_y"]
