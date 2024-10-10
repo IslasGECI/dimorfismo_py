@@ -29,6 +29,7 @@ def test_test_data_sexo():
 
 @pytest.mark.xfail(strict=True)
 def test_split_data_are_differents() -> None:
+
     fit_data: pd.DataFrame = splited_data["to_fit"]
     pd.testing.assert_frame_equal(full_data[:12], fit_data)
 
@@ -64,6 +65,7 @@ def test_split_data_are_differents_rows() -> None:
     index_to_test = set(test_data.index)
     obtained_commun = len(index_to_fit & index_to_test)
     expected_commun = 0
+    assert len(index_to_fit | index_to_test) == len(full_data)
     assert obtained_commun == expected_commun
 
 
