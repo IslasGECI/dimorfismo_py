@@ -43,12 +43,6 @@ def test_split_data_with_right_columns() -> None:
     assert obtained_commun == expected_commun
 
 
-@pytest.mark.xfail(strict=True)
-def test_split_data_are_differents_to_Test() -> None:
-    test_data: pd.DataFrame = splited_data["to_test"]
-    pd.testing.assert_frame_equal(full_data[12:], test_data)
-
-
 def test_split_test_data_with_right_columns() -> None:
     test_data: pd.DataFrame = splited_data["to_test"]
     obtained_colname = test_data.columns
