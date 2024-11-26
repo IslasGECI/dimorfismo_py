@@ -16,10 +16,16 @@ def split_data(df: pd.DataFrame) -> dict:
         "notas",
         target_name,
     ]
+    wanted_colnames: list = [
+        "bill_depth",
+        "bill_length",
+        "head_length",
+        "head_width",
+    ]
     splitted_data = {
-        "to_fit": data_train.drop(columns=not_wanted_colnames),
+        "to_fit": data_train[wanted_colnames],
         "to_fit_target": target_train,
-        "to_test": data_test.drop(columns=not_wanted_colnames),
+        "to_test": data_test[wanted_colnames],
         "to_test_y": pd.DataFrame(target_test),
     }
 

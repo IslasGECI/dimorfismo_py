@@ -30,6 +30,7 @@ def test_albatross_example():
     fitted_model = dt.get_fitted_model(splited_data)
 
     expected = splited_data["to_test_y"]
+    print(splited_data["to_test_y"])
     obtained = dt.predicted_sex(splited_data)
 
     assert (obtained == expected.values.flatten()).all(), "First real example"
