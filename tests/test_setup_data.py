@@ -30,7 +30,8 @@ def test_test_data_sexo():
 def test_split_data_with_right_columns() -> None:
     fit_data: pd.DataFrame = splited_data["to_fit"]
     obtained_colname = fit_data.columns
-    not_expexted_colname = {"id_nido", "id_darvic", "subcolonia", "temporada", "notas"}
+    wanted_colnames = {"bill_depth", "bill_length", "head_length", "head_width"}
+    not_expexted_colname = set(fit_data.columns) - wanted_colnames
     obtained_commun = len(not_expexted_colname & set(obtained_colname))
     expected_commun = 0
     assert obtained_commun == expected_commun
