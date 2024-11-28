@@ -60,7 +60,3 @@ def test_split_data_are_differents_rows() -> None:
 def _check_number_of_row_is_right(data: pd.DataFrame, expected_n_row: int) -> None:
     obtained_n_row: int = len(data)
     assert obtained_n_row == expected_n_row, "The number of row is right"
-
-
-def test_obtained_parameters():
-    parameters = obtained_parameters()
