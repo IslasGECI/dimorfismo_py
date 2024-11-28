@@ -1,3 +1,6 @@
+import json
+
+
 def obtained_parameters(fitted_model):
     keys = ["bill_depth", "bill_length", "Tarsus", "head_width", "Intercept"]
     values = [*fitted_model.coef_, *fitted_model.intercept_]
@@ -5,4 +8,6 @@ def obtained_parameters(fitted_model):
 
 
 def write_json_parameters(parameters_dictionary, parameters_path):
-    pass
+    json_object = json.dumps(parameters_dictionary)
+    with open(parameters_path, "w") as outfile:
+        outfile.write(json_object)
