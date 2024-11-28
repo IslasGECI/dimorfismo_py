@@ -34,3 +34,9 @@ class Mock_fitted_model:
     def __init__(self):
         self.intercept_ = np.array([intercept])
         self.coef_ = np.array(coeficients)
+
+
+def test_get_model_parameters():
+    data_path = "tests/data/laysan_albatross_morphometry_guadalupe.csv"
+    parameters_path = "tests/data/model_parameters.json"
+    parameters = dt.get_model_parameters(data_path, parameters_path)
