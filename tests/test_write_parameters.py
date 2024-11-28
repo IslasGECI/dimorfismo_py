@@ -6,6 +6,12 @@ coeficients = [1.26, 3.45, 4.25, 7.81]
 intercept = [-12.466]
 
 
+def test_write_json_parameters():
+    parameters_dictionary = {"Intercept": 1, "parameter_1": 8.4}
+    parameters_path = "tests/data/model_parameters.json"
+    dt.write_json_parameters(parameters_dictionary, parameters_path)
+
+
 def test_obtained_parameters():
     fitted_model = Mock_fitted_model()
     obtained = dt.obtained_parameters(fitted_model)
