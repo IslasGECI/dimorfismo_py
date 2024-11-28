@@ -1,5 +1,6 @@
 import numpy as np
 import dimorfism as dt
+import geci_test_tools as gtt
 
 
 coeficients = [1.26, 3.45, 4.25, 7.81]
@@ -9,7 +10,9 @@ intercept = [-12.466]
 def test_write_json_parameters():
     parameters_dictionary = {"Intercept": 1, "parameter_1": 8.4}
     parameters_path = "tests/data/model_parameters.json"
+    gtt.if_exist_remove(parameters_path)
     dt.write_json_parameters(parameters_dictionary, parameters_path)
+    gtt.assert_exist(parameters_path)
 
 
 def test_obtained_parameters():
