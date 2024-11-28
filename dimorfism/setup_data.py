@@ -11,7 +11,7 @@ def split_data(df: pd.DataFrame) -> dict:
     wanted_colnames: list = [
         "bill_depth",
         "bill_length",
-        "head_length",
+        "Tarsus",
         "head_width",
     ]
     splitted_data = {
