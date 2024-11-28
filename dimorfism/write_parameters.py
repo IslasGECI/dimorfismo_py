@@ -1,2 +1,6 @@
 def obtained_parameters(fitted_model):
-    return {"bill_depth": 1.26, "bill_length": 3.45, "Tarsus": 4.25, "head_width": 7.81}
+    keys = ["bill_depth", "bill_length", "Tarsus", "head_width"]
+    values = fitted_model.coef_
+    myDict = {k: v for (k, v) in zip(keys, values)}
+
+    return myDict
