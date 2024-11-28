@@ -40,3 +40,6 @@ def test_get_model_parameters():
     data_path = "tests/data/laysan_albatross_morphometry_guadalupe.csv"
     parameters_path = "tests/data/model_parameters.json"
     parameters = dt.get_model_parameters(data_path, parameters_path)
+    gtt.if_exist_remove(parameters_path)
+    dt.get_model_parameters(data_path, parameters_path)
+    gtt.assert_exist(parameters_path)
