@@ -8,6 +8,5 @@ def obtained_parameters(fitted_model):
 
 
 def write_json_parameters(parameters_dictionary, parameters_path):
-    json_object = json.dumps(parameters_dictionary)
     with open(parameters_path, "w") as outfile:
-        outfile.write(json_object)
+        json.dump(parameters_dictionary, outfile)
