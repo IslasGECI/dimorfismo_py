@@ -1,2 +1,2 @@
 def obtained_parameters(fitted_model):
-    return {}
+    return {"bill_depth": [], "bill_length": [], "Tarsus": [], "head_width": []}
