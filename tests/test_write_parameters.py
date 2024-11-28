@@ -2,6 +2,7 @@ import dimorfism as dt
 
 
 coeficients = [1.26, 3.45, 4.25, 7.81]
+intercept = [-12.466]
 
 
 def test_obtained_parameters():
@@ -16,10 +17,10 @@ def test_obtained_parameters():
         "Intercept",
     ]
 
-    assert list(obtained.values()) == coeficients
+    assert list(obtained.values()) == [*coeficients, *intercept]
 
 
 class Mock_fitted_model:
     def __init__(self):
-        self.intercept_ = [-12.466]
+        self.intercept_ = intercept
         self.coef_ = coeficients
