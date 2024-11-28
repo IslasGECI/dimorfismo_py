@@ -33,7 +33,7 @@ def test_obtained_parameters():
 class Mock_fitted_model:
     def __init__(self):
         self.intercept_ = np.array([intercept])
-        self.coef_ = np.array(coeficients)
+        self.coef_ = np.array([coeficients])
 
 
 def test_get_model_parameters():
