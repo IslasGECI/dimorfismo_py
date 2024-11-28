@@ -1,3 +1,4 @@
+import numpy as np
 import dimorfism as dt
 
 
@@ -22,5 +23,5 @@ def test_obtained_parameters():
 
 class Mock_fitted_model:
     def __init__(self):
-        self.intercept_ = intercept
-        self.coef_ = coeficients
+        self.intercept_ = np.array([intercept])
+        self.coef_ = np.array(coeficients)
