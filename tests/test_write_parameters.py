@@ -7,8 +7,10 @@ def test_obtained_parameters():
     isinstance(obtained, dict)
     assert list(obtained.keys()) == ["bill_depth", "bill_length", "Tarsus", "head_width"]
 
+    assert list(obtained.values()) == [1.26, 3.45, 4.25, 7.81]
+
 
 class Mock_fitted_model:
     def __init__(self):
         self.intercept_ = [1.26]
-        self.coef_ = [1.26, 3.45]
+        self.coef_ = [1.26, 3.45, 4.25, 7.81]
