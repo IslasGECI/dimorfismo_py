@@ -1,5 +1,4 @@
 import pandas as pd
-import pytest
 import dimorfism as dt
 
 full_data: pd.DataFrame = pd.read_csv(
@@ -15,7 +14,6 @@ def test_split_data() -> None:
     test_data_y: pd.DataFrame = splited_data["to_test_y"]
     _check_number_of_row_is_right(test_data_y, 3)
 
-    test_data: pd.DataFrame = splited_data["to_test"]
     fit_data: pd.DataFrame = splited_data["to_fit"]
     _check_number_of_row_is_right(fit_data, 12)
 
