@@ -10,3 +10,7 @@ def obtained_parameters(fitted_model):
 def write_json_parameters(parameters_dictionary, parameters_path):
     with open(parameters_path, "w") as outfile:
         json.dump(parameters_dictionary, outfile)
+
+
+def get_model_parameters(data_path, parameters_path):
+    pass
