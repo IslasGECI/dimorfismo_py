@@ -1,2 +1,2 @@
-def obtained_parameters():
-    pass
+def obtained_parameters(fitted_model):
+    return {}
