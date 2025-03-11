@@ -1,5 +1,7 @@
-from dimorfism.cli import write_model_parameters
+from dimorfism.cli import write_model_parameters, app
+
 import geci_test_tools as gtt
+from typer.testing import CliRunner
 
 
 def test_get_model_parameters():
@@ -8,3 +10,11 @@ def test_get_model_parameters():
     gtt.if_exist_remove(parameters_path)
     write_model_parameters(data_path, parameters_path)
     gtt.assert_exist(parameters_path)
+
+
+runner = CliRunner()
+
+
+def tests_write_model_parameters():
+    result = runner.invoke(app, ["--help"])
+    assert result.exit_code == 0
