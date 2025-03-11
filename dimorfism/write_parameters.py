@@ -17,11 +17,11 @@ def write_json_parameters(parameters_dictionary, parameters_path):
 
 def write_model_parameters(data_path, parameters_path):
     complete_dataframe = pd.read_csv(data_path)
-    parameters_dictionary = calculate_model_parameters(complete_dataframe)
+    parameters_dictionary = get_model_parameters(complete_dataframe)
     write_json_parameters(parameters_dictionary, parameters_path)
 
 
-def calculate_model_parameters(complete_dataframe):
+def get_model_parameters(complete_dataframe):
     splited_data = split_data(complete_dataframe)
     fitted_model = get_fitted_model(splited_data)
     parameters_dictionary = obtained_parameters(fitted_model)
