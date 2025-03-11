@@ -11,3 +11,8 @@ def write_model_parameters(data_path, parameters_path):
     complete_dataframe = pd.read_csv(data_path)
     parameters_dictionary = get_model_parameters(complete_dataframe)
     write_json_parameters(parameters_dictionary, parameters_path)
+
+
+@app.command()
+def version():
+    print("0.0.1")
