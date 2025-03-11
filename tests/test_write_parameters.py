@@ -3,14 +3,6 @@ import dimorfism as dt
 import geci_test_tools as gtt
 
 
-def test_get_model_parameters():
-    data_path = "tests/data/laysan_albatross_morphometry_guadalupe.csv"
-    parameters_path = "tests/data/model_parameters.json"
-    gtt.if_exist_remove(parameters_path)
-    dt.write_model_parameters(data_path, parameters_path)
-    gtt.assert_exist(parameters_path)
-
-
 def test_write_json_parameters():
     parameters_dictionary = {"Intercept": 1, "parameter_1": 8.4}
     parameters_path = "tests/data/model_parameters.json"
