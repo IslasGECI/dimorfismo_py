@@ -18,3 +18,12 @@ runner = CliRunner()
 def tests_write_model_parameters():
     result = runner.invoke(app, ["--help"])
     assert result.exit_code == 0
+
+
+def test_version():
+    result = runner.invoke(
+        app,
+        ["version"],
+    )
+    expected_version = "0.0.1"
+    assert expected_version in result.stdout
