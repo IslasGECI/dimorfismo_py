@@ -1,4 +1,4 @@
-from dimorfism.write_parameters import write_model_parameters
+from dimorfism.cli import write_model_parameters
 import geci_test_tools as gtt
 
 
