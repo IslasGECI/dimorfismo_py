@@ -11,6 +11,9 @@ home-page = "https://github.com/IslasGECI/dimorfismo_py"
 module = "dimorfism"
 requires = [
     "pandas",
-    "scikit-learn"
+    "scikit-learn", 
+    "typer"
 ]
 requires-python=">=3.9"
+[tool.flit.scripts]
+dimorfism = "dimorfism.cli:app"
