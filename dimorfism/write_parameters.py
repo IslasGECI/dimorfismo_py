@@ -15,7 +15,7 @@ def write_json_parameters(parameters_dictionary, parameters_path):
         json.dump(parameters_dictionary, outfile)
 
 
-def get_model_parameters(data_path, parameters_path):
+def write_model_parameters(data_path, parameters_path):
     complete_dataframe = pd.read_csv(data_path)
     parameters_dictionary = calculate_model_parameters(complete_dataframe)
     write_json_parameters(parameters_dictionary, parameters_path)
