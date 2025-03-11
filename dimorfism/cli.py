@@ -7,7 +7,10 @@ app = typer.Typer()
 
 
 @app.command()
-def write_model_parameters(data_path, parameters_path):
+def write_model_parameters(
+    data_path: str = typer.Option(""),
+    parameters_path: str = typer.Option(""),
+):
     complete_dataframe = pd.read_csv(data_path)
     parameters_dictionary = get_model_parameters(complete_dataframe)
     write_json_parameters(parameters_dictionary, parameters_path)
