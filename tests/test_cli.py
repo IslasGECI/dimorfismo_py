@@ -16,8 +16,9 @@ runner = CliRunner()
 
 
 def tests_write_model_parameters():
-    result = runner.invoke(app, ["--help"])
+    result = runner.invoke(app, ["write-model-parameters", "--help"])
     assert result.exit_code == 0
+    assert "--data-path" in result.stdout
 
 
 def test_version():
