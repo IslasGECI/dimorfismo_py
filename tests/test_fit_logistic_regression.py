@@ -23,7 +23,15 @@ def test_logistic_regression():
 full_data: pd.DataFrame = pd.read_csv(
     "/workdir/tests/data/laysan_albatross_morphometry_guadalupe.csv"
 )
-splited_data: dict = dt.split_data(full_data)
+
+wanted_colnames: list = [
+    "bill_depth",
+    "bill_length",
+    "head_width",
+    "Tarsus",
+]
+
+splited_data: dict = dt.xxsplit_data(full_data, wanted_colnames)
 
 
 def test_albatross_example():
