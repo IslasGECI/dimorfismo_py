@@ -20,6 +20,8 @@ def tests_write_model_parameters():
     assert result.exit_code == 0
     assert "--data-path" in result.stdout
     assert " Input morphometry data path]" in result.stdout
+    assert "--parameters-path" in result.stdout
+    assert " Output parameters path]" in result.stdout
 
 
 def test_version():
