@@ -28,7 +28,10 @@ def tests_write_model_parameters():
     gtt.assert_exist(parameters_path)
 
     parameters = read_json(parameters_path)
-    assert parameters.keys() == ["bill_depth", "bill_length", "Tarsus", "head_width"]
+
+    assert set(parameters.keys()) == set(
+        ["bill_depth", "bill_length", "Tarsus", "head_width", "Intercept"]
+    )
 
     gtt.if_exist_remove(parameters_path)
 
