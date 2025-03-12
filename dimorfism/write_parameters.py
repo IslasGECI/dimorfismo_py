@@ -5,7 +5,7 @@ import pandas as pd
 
 
 def obtained_parameters(fitted_model):
-    keys = ["bill_depth", "bill_length", "Tarsus", "head_width", "Intercept"]
+    keys = [str(name) for name in fitted_model.feature_names_in_] + ["Intercept"]
     values = [*fitted_model.coef_[0], fitted_model.intercept_.item()]
     return {k: float(v) for (k, v) in zip(keys, values)}
 
