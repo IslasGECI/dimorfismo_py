@@ -29,8 +29,8 @@ def test_split_data_with_right_columns() -> None:
     fit_data: pd.DataFrame = splited_data["to_fit"]
     obtained_colname = fit_data.columns
     wanted_colnames = {"bill_depth", "bill_length", "Tarsus", "head_width"}
-    not_expexted_colname = set(fit_data.columns) - wanted_colnames
-    obtained_commun = len(not_expexted_colname & set(obtained_colname))
+    not_expected_colname = set(fit_data.columns) - wanted_colnames
+    obtained_commun = len(not_expected_colname & set(obtained_colname))
     expected_commun = 0
     assert obtained_commun == expected_commun
 
