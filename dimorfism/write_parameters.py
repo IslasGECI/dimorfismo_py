@@ -19,5 +19,4 @@ def get_model_parameters(complete_dataframe):
     splited_data = split_data(complete_dataframe)
     fitted_model = get_fitted_model(splited_data)
     parameters_dictionary = obtained_parameters(fitted_model)
-    print(fitted_model)
     return parameters_dictionary
