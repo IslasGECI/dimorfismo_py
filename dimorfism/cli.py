@@ -9,7 +9,7 @@ app = typer.Typer()
 @app.command()
 def write_model_parameters(
     data_path: str = typer.Option("Input morphometry data path"),
-    parameters_path: str = typer.Option(""),
+    parameters_path: str = typer.Option("Output parameters path"),
 ):
     complete_dataframe = pd.read_csv(data_path)
     parameters_dictionary = get_model_parameters(complete_dataframe)
