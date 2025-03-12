@@ -4,6 +4,13 @@ from dimorfism.fit_logistic_regression import get_fitted_model
 import pandas as pd
 
 
+def get_model_parameters(complete_dataframe):
+    splited_data = split_data(complete_dataframe)
+    fitted_model = get_fitted_model(splited_data)
+    parameters_dictionary = obtained_parameters(fitted_model)
+    return parameters_dictionary
+
+
 def obtained_parameters(fitted_model):
     keys = [str(name) for name in fitted_model.feature_names_in_] + ["Intercept"]
     values = [*fitted_model.coef_[0], fitted_model.intercept_.item()]
@@ -13,10 +20,3 @@ def obtained_parameters(fitted_model):
 def write_json_parameters(parameters_dictionary, parameters_path):
     with open(parameters_path, "w") as outfile:
         json.dump(parameters_dictionary, outfile)
-
-
-def get_model_parameters(complete_dataframe):
-    splited_data = split_data(complete_dataframe)
-    fitted_model = get_fitted_model(splited_data)
-    parameters_dictionary = obtained_parameters(fitted_model)
-    return parameters_dictionary
