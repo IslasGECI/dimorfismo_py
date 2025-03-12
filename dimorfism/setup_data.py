@@ -2,18 +2,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
-def split_data(df: pd.DataFrame) -> dict:
-    wanted_colnames: list = [
-        "bill_depth",
-        "bill_length",
-        "head_width",
-        "Tarsus",
-    ]
-    splitted_data = xxsplit_data(df, wanted_colnames)
-
-    return splitted_data
-
-
 def xxsplit_data(df: pd.DataFrame, wanted_colnames: list) -> dict:
     target_name = "sexo"
     target = df[target_name]
