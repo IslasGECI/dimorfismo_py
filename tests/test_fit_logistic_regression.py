@@ -28,8 +28,6 @@ splited_data: dict = dt.split_data(full_data)
 
 def test_albatross_example():
     fitted_model = dt.get_fitted_model(splited_data)
-    print(fitted_model)
-
     expected = splited_data["to_test_y"]
     obtained = dt.predicted_sex(splited_data)
 
