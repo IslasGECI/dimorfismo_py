@@ -12,7 +12,7 @@ wanted_colnames: list = [
     "Tarsus",
 ]
 
-splited_data: dict = dt.xxsplit_data(full_data, wanted_colnames)
+splited_data: dict = dt.split_data(full_data, wanted_colnames)
 
 
 def test_split_data() -> None:
