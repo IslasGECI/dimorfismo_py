@@ -22,8 +22,8 @@ def test_obtained_parameters():
     assert list(obtained.keys()) == [
         "bill_depth",
         "bill_length",
-        "Tarsus",
         "head_width",
+        "Tarsus",
         "Intercept",
     ]
 
@@ -32,5 +32,6 @@ def test_obtained_parameters():
 
 class Mock_fitted_model:
     def __init__(self):
+        self.feature_names_in_ = np.array(["bill_depth", "bill_length", "head_width", "Tarsus"])
         self.intercept_ = np.array([intercept])
         self.coef_ = np.array([coeficients])
