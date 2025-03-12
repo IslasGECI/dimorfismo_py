@@ -23,6 +23,16 @@ def tests_write_model_parameters():
     assert "--parameters-path" in result.stdout
     assert " Output parameters path]" in result.stdout
 
+    data_path = "tests/data/laysan_albatross_morphometry_guadalupe.csv"
+    parameters_path = "tests/data/model_parameters.json"
+    gtt.if_exist_remove(parameters_path)
+    result = runner.invoke(
+        app,
+        ["write-model-parameters", "--data-path", data_path, "--parameters-path", parameters_path],
+    )
+    assert result.exit_code == 0
+    gtt.assert_exist(parameters_path)
+
 
 def test_version():
     result = runner.invoke(
