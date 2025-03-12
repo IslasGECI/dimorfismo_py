@@ -1,6 +1,5 @@
 import numpy as np
 import dimorfism as dt
-import geci_test_tools as gtt
 
 
 coeficients = [1.26, 3.45, 4.25, 7.81]
