@@ -11,8 +11,8 @@ def split_data(df: pd.DataFrame) -> dict:
     wanted_colnames: list = [
         "bill_depth",
         "bill_length",
-        "Tarsus",
         "head_width",
+        "Tarsus",
     ]
     splitted_data = {
         "to_fit": data_train[wanted_colnames],
