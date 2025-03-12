@@ -1,7 +1,6 @@
 import json
 from dimorfism.setup_data import split_data
 from dimorfism.fit_logistic_regression import get_fitted_model
-import pandas as pd
 
 
 def get_model_parameters(complete_dataframe):
