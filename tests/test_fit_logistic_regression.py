@@ -31,7 +31,8 @@ wanted_colnames: list = [
     "Tarsus",
 ]
 
-splited_data: dict = dt.split_data(full_data, wanted_colnames)
+filtered_data = full_data[wanted_colnames + ["sexo"]]
+splited_data: dict = dt.xxsplit_data(filtered_data)
 
 
 def test_albatross_example():
