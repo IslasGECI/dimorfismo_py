@@ -24,7 +24,7 @@ def adapter_morphometry(data_path):
         "Tarsus",
     ]
     complete_dataframe = pd.read_csv(data_path)
-    return wanted_colnames, complete_dataframe
+    return wanted_colnames, complete_dataframe[wanted_colnames + ["sexo"]]
 
 
 @app.command()
