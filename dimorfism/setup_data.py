@@ -14,9 +14,9 @@ def xxsplit_data(df: pd.DataFrame) -> dict:
         df, target, random_state=7, train_size=0.8
     )
     splitted_data = {
-        "to_fit": data_train.drop(columns="sexo"),
+        "to_fit": data_train.drop(columns=target_name),
         "to_fit_target": target_train,
-        "to_test": data_test.drop(columns="sexo"),
+        "to_test": data_test.drop(columns=target_name),
         "to_test_y": pd.DataFrame(target_test),
     }
 
