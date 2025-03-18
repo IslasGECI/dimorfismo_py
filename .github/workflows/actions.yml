@@ -23,6 +23,7 @@ jobs:
       with:
         name: image
         path: /tmp/image.tar
+        retention-days: 1
 
   test-module:
     name: Test Python module 🐍
@@ -49,6 +50,8 @@ jobs:
       with:
         files: ./coverage.xml
         verbose: true
+    - name: Corre mutantes
+      run: docker run --volume $PWD:/workdir islasgeci/dimorfismo_py:latest make mutants
     - name: Create/Update tag
       uses: rickstaa/action-create-tag@v1.5.4
       with:
