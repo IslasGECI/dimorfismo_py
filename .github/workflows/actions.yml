@@ -41,6 +41,9 @@ jobs:
       run: |
         docker load --input /tmp/image.tar
         docker image ls -a
+    - uses: geekyeggo/delete-artifact@v5
+      with:
+          name: image
     - name: Verifica el formato
       run: docker run islasgeci/dimorfismo_py:latest make check
     - name: Corre pruebas y evalúa cobertura
@@ -58,9 +61,6 @@ jobs:
         tag: "latest"
         message: "Latest release"
         force_push_tag: true
-    - uses: geekyeggo/delete-artifact@v5
-      with:
-          name: image
 
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI
