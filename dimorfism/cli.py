@@ -11,6 +11,12 @@ def write_model_parameters(
     data_path: str = typer.Option("Input morphometry data path"),
     parameters_path: str = typer.Option("Output parameters path"),
 ):
+    wanted_colnames, complete_dataframe = adapter_morphometry(data_path)
+    parameters_dictionary = get_model_parameters(complete_dataframe, wanted_colnames)
+    write_json_parameters(parameters_dictionary, parameters_path)
+
+
+def adapter_morphometry(data_path):
     wanted_colnames: list = [
         "bill_depth",
         "bill_length",
@@ -18,8 +24,7 @@ def write_model_parameters(
         "Tarsus",
     ]
     complete_dataframe = pd.read_csv(data_path)
-    parameters_dictionary = get_model_parameters(complete_dataframe, wanted_colnames)
-    write_json_parameters(parameters_dictionary, parameters_path)
+    return wanted_colnames, complete_dataframe
 
 
 @app.command()
