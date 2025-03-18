@@ -58,6 +58,9 @@ jobs:
         tag: "latest"
         message: "Latest release"
         force_push_tag: true
+    - uses: geekyeggo/delete-artifact@v5
+      with:
+          name: image
 
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI
