@@ -1,10 +1,11 @@
 import json
-from dimorfism.setup_data import split_data
+from dimorfism.setup_data import xxsplit_data
 from dimorfism.fit_logistic_regression import get_fitted_model
 
 
 def get_model_parameters(complete_dataframe, wanted_colnames):
-    splited_data = split_data(complete_dataframe, wanted_colnames)
+    filtered_data = complete_dataframe[wanted_colnames + ["sexo"]]
+    splited_data = xxsplit_data(filtered_data)
     fitted_model = get_fitted_model(splited_data)
     parameters_dictionary = obtained_parameters(fitted_model)
     return parameters_dictionary
