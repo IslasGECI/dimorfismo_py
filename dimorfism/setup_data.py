@@ -3,19 +3,8 @@ from sklearn.model_selection import train_test_split
 
 
 def split_data(df: pd.DataFrame, wanted_colnames: list) -> dict:
-    target_name = "sexo"
-    target = df[target_name]
-    data_train, data_test, target_train, target_test = train_test_split(
-        df, target, random_state=7, train_size=0.8
-    )
-    splitted_data = {
-        "to_fit": data_train[wanted_colnames],
-        "to_fit_target": target_train,
-        "to_test": data_test[wanted_colnames],
-        "to_test_y": pd.DataFrame(target_test),
-    }
-
-    return splitted_data
+    filtered_data = df[wanted_colnames + ["sexo"]]
+    return xxsplit_data(filtered_data)
 
 
 def xxsplit_data(df: pd.DataFrame) -> dict:
@@ -25,9 +14,9 @@ def xxsplit_data(df: pd.DataFrame) -> dict:
         df, target, random_state=7, train_size=0.8
     )
     splitted_data = {
-        "to_fit": data_train,
+        "to_fit": data_train.drop(columns="sexo"),
         "to_fit_target": target_train,
-        "to_test": data_test,
+        "to_test": data_test.drop(columns="sexo"),
         "to_test_y": pd.DataFrame(target_test),
     }
 
