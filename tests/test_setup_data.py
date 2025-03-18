@@ -13,7 +13,7 @@ wanted_colnames: list = [
 ]
 
 filtered_data = full_data[wanted_colnames + ["sexo"]]
-splited_data: dict = dt.xxsplit_data(filtered_data)
+splited_data: dict = dt.split_data(filtered_data)
 
 
 def test_split_data() -> None:

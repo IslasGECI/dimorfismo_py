@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
-def xxsplit_data(df: pd.DataFrame) -> dict:
+def split_data(df: pd.DataFrame) -> dict:
     target_name = "sexo"
     target = df[target_name]
     data_train, data_test, target_train, target_test = train_test_split(
