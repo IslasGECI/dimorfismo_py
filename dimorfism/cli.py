@@ -1,4 +1,4 @@
-from dimorfism.write_parameters import xxget_model_parameters, write_json_parameters
+from dimorfism.write_parameters import get_model_parameters, write_json_parameters
 import pandas as pd
 
 import typer
@@ -18,7 +18,7 @@ def write_model_parameters(
         "Tarsus",
     ]
     complete_dataframe = pd.read_csv(data_path)
-    parameters_dictionary = xxget_model_parameters(complete_dataframe, wanted_colnames)
+    parameters_dictionary = get_model_parameters(complete_dataframe, wanted_colnames)
     write_json_parameters(parameters_dictionary, parameters_path)
 
 
