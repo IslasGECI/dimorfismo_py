@@ -1,4 +1,4 @@
-from dimorfism.write_parameters import get_model_parameters, write_json_parameters
+from dimorfism.write_parameters import xxget_model_parameters, write_json_parameters
 import pandas as pd
 
 import typer
@@ -12,7 +12,7 @@ def write_model_parameters(
     parameters_path: str = typer.Option("Output parameters path"),
 ):
     wanted_colnames, complete_dataframe = adapter_morphometry(data_path)
-    parameters_dictionary = get_model_parameters(complete_dataframe, wanted_colnames)
+    parameters_dictionary = xxget_model_parameters(complete_dataframe)
     write_json_parameters(parameters_dictionary, parameters_path)
 
 
