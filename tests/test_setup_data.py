@@ -16,6 +16,12 @@ filtered_data = full_data[wanted_colnames + ["sexo"]]
 splited_data: dict = split_data(filtered_data)
 
 
+def test_random_state() -> None:
+    obtained = splited_data["to_test"].iloc[0, 0]
+    expected = 33.5
+    assert obtained == expected
+
+
 def test_split_data() -> None:
     test_data: pd.DataFrame = splited_data["to_test"]
     _check_number_of_row_is_right(test_data, 3)
