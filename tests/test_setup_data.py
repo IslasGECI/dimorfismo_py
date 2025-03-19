@@ -1,5 +1,5 @@
 import pandas as pd
-import dimorfism as dt
+from dimorfism.setup_data import split_data
 
 full_data: pd.DataFrame = pd.read_csv(
     "/workdir/tests/data/laysan_albatross_morphometry_guadalupe.csv"
@@ -13,7 +13,7 @@ wanted_colnames: list = [
 ]
 
 filtered_data = full_data[wanted_colnames + ["sexo"]]
-splited_data: dict = dt.split_data(filtered_data)
+splited_data: dict = split_data(filtered_data)
 
 
 def test_split_data() -> None:
