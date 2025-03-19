@@ -3,8 +3,8 @@ from dimorfism.setup_data import split_data
 from dimorfism.fit_logistic_regression import get_fitted_model
 
 
-def get_model_parameters(filtered_data):
-    splited_data = split_data(filtered_data)
+def get_model_parameters(selected_data):
+    splited_data = split_data(selected_data)
     fitted_model = get_fitted_model(splited_data)
     parameters_dictionary = obtained_parameters(fitted_model)
     return parameters_dictionary
