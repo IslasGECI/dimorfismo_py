@@ -21,8 +21,3 @@ dimorfism = "dimorfism.cli:app"
 [tool.mutmut]
 paths_to_mutate = [ "dimorfism/" ]
 tests_dir = [ "tests/" ]
-
-[tool.pytest.ini_options]
-testpaths = [
-    "tests"
-]

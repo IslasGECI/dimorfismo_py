@@ -38,7 +38,7 @@ clean:
 	rm --force --recursive ${module}.egg-info
 	rm --force --recursive ${module}/__pycache__
 	rm --force --recursive tests/__pycache__
-	rm --force .mutmut-cache
+	rm --force --recursive mutants
 	rm --force coverage.xml
 
 coverage: setup
@@ -65,11 +65,12 @@ linter:
 
 mutants: setup
 	mutmut run
+	expr "{mutmut results | wc -l}"  == "0"
 
 setup: clean install
 
 tests:
-	pytest --verbose
+	pytest --verbose tests/
 
 red: format
 	pytest --verbose \
