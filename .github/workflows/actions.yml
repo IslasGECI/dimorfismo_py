@@ -23,7 +23,6 @@ jobs:
       with:
         name: image
         path: /tmp/image.tar
-        retention-days: 1
 
   test-module:
     name: Test Python module 🐍
