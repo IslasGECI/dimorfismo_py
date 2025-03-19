@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy
 import pytest
-import dimorfism as dt
+from dimorfism.fit_logistic_regression import get_fitted_model, logistic_regression
+from dimorfism.setup_data import split_data
 
 
 def test_logistic_regression():
@@ -9,7 +10,7 @@ def test_logistic_regression():
         [3.78, 2.44, 2.09, 0.14, 1.72, 1.65, 4.92, 4.37, 4.96, 4.52, 3.69, 5.88]
     ).reshape(-1, 1)
     y = numpy.array([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1])
-    logr = dt.logistic_regression()
+    logr = logistic_regression()
     logr.fit(x, y)
     expected = [0]
     obtained = logr.predict(numpy.array([3.46]).reshape(-1, 1))
@@ -32,11 +33,11 @@ wanted_colnames: list = [
 ]
 
 filtered_data = full_data[wanted_colnames + ["sexo"]]
-splited_data: dict = dt.split_data(filtered_data)
+splited_data: dict = split_data(filtered_data)
 
 
 def test_albatross_example():
-    fitted_model = dt.get_fitted_model(splited_data)
+    fitted_model = get_fitted_model(splited_data)
     expected_score = 2 / 3
     x_score = splited_data["to_test"]
     y_score = splited_data["to_test_y"]

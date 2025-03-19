@@ -1,4 +1,4 @@
-from dimorfism.cli import app
+from dimorfism import app
 import json
 
 import geci_test_tools as gtt

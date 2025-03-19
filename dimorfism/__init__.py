@@ -1,5 +1,4 @@
 """Dimorfism module"""
 
 __version__ = "0.0.1"
-from .fit_logistic_regression import *  # noqa
-from .write_parameters import *  # noqa
+from .cli import app  # noqa

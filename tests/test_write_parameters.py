@@ -1,5 +1,6 @@
 import numpy as np
-import dimorfism as dt
+
+from dimorfism.write_parameters import obtained_parameters
 
 
 coeficients = [1.26, 3.45, 4.25, 7.81]
@@ -8,7 +9,7 @@ intercept = [-12.466]
 
 def test_obtained_parameters():
     fitted_model = Mock_fitted_model()
-    obtained = dt.obtained_parameters(fitted_model)
+    obtained = obtained_parameters(fitted_model)
     isinstance(obtained, dict)
     assert list(obtained.keys()) == [
         "bill_depth",
