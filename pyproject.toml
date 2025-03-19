@@ -17,3 +17,12 @@ requires = [
 requires-python=">=3.9"
 [tool.flit.scripts]
 dimorfism = "dimorfism.cli:app"
+
+[tool.mutmut]
+paths_to_mutate = [ "dimorfism/" ]
+tests_dir = [ "tests/" ]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
