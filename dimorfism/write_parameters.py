@@ -5,10 +5,7 @@ from dimorfism.fit_logistic_regression import get_fitted_model
 
 def get_model_parameters(complete_dataframe, wanted_colnames):
     filtered_data = complete_dataframe[wanted_colnames + ["sexo"]]
-    splited_data = split_data(filtered_data)
-    fitted_model = get_fitted_model(splited_data)
-    parameters_dictionary = obtained_parameters(fitted_model)
-    return parameters_dictionary
+    return xxget_model_parameters(filtered_data)
 
 
 def xxget_model_parameters(filtered_data):
