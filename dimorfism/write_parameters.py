@@ -3,11 +3,6 @@ from dimorfism.setup_data import split_data
 from dimorfism.fit_logistic_regression import get_fitted_model
 
 
-def get_model_parameters(complete_dataframe, wanted_colnames):
-    filtered_data = complete_dataframe[wanted_colnames + ["sexo"]]
-    return xxget_model_parameters(filtered_data)
-
-
 def xxget_model_parameters(filtered_data):
     splited_data = split_data(filtered_data)
     fitted_model = get_fitted_model(splited_data)
