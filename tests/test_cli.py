@@ -41,7 +41,7 @@ def test_version():
         app,
         ["version"],
     )
-    expected_version = "0.0.1"
+    expected_version = "0.1.0"
     assert expected_version in result.stdout
 
 

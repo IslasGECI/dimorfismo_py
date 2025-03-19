@@ -18,4 +18,4 @@ def write_model_parameters(
 
 @app.command()
 def version():
-    print("0.0.1")
+    print("0.1.0")
