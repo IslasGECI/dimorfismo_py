@@ -11,6 +11,13 @@ def get_model_parameters(complete_dataframe, wanted_colnames):
     return parameters_dictionary
 
 
+def xxget_model_parameters(filtered_data):
+    splited_data = split_data(filtered_data)
+    fitted_model = get_fitted_model(splited_data)
+    parameters_dictionary = obtained_parameters(fitted_model)
+    return parameters_dictionary
+
+
 def obtained_parameters(fitted_model):
     keys = [str(name) for name in fitted_model.feature_names_in_] + ["Intercept"]
     values = [*fitted_model.coef_[0], fitted_model.intercept_.item()]
