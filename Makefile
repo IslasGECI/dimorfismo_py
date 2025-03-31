@@ -16,6 +16,10 @@ all: check coverage mutants
 module = dimorfism
 codecov_token = a73fa609-da5f-4d07-bcbb-625558f01ba3
 
+define checkDirectories
+	mkdir --parents $(@D)
+endef
+
 define lint
 	pylint \
         --disable=bad-continuation \
@@ -90,3 +94,13 @@ refactor: format
 	|| git restore ${module}/*.py tests/*.py
 	chmod g+w -R .
 
+data/raw/morfometria_albatros-laysan_guadalupe.csv: 
+    $(checkDirectories)
+    descarga_datos $(@F) $(@D) morfometria_albatros-laysan_guadalupe
+
+data/processed/model_parameters.json: \
+	data/raw/laysan_albatross_morphometry_guadalupe.csv \
+    $(checkDirectories)
+    dimorfism write-model-parameters \
+	  		--data-path data/raw/laysan_albatross_morphometry_guadalupe.csv \
+	  		--parameters-path data/processed/model_parameters.json
