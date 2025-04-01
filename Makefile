@@ -99,8 +99,8 @@ data/raw/morfometria_albatros-laysan_guadalupe.csv:
 	descarga_datos $(@F) $(@D) morfometria_albatros-laysan_guadalupe
 
 data/processed/model_parameters.json: \
-	data/raw/laysan_albatross_morphometry_guadalupe.csv
+	data/raw/morfometria_albatros-laysan_guadalupe.csv
 	$(checkDirectories)
 	dimorfism write-model-parameters \
-		--data-path data/raw/laysan_albatross_morphometry_guadalupe.csv \
+		--data-path data/raw/morfometria_albatros-laysan_guadalupe.csv \
 		--parameters-path data/processed/model_parameters.json
