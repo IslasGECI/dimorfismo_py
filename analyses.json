@@ -1,0 +1,20 @@
+[
+    {
+        "image_tag": "",
+        "name": "First article",
+        "description": "This is the first article",
+        "report": "first_article.pdf",
+        "results": [],
+        "scripts": [],
+        "data": [
+            {
+                "source": "tabular_data_packages",
+                "version": "910df76ac2a0487cf3faf5c51b1a28901cce9d42",
+                "path": "morfometria_albatros-laysan_guadalupe",
+                "type": "csv",
+                "filename": "morfometria_albatros-laysan_guadalupe.csv"
+            }
+        ],
+        "requirements": []
+    }
+]

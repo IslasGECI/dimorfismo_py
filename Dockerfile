@@ -3,6 +3,7 @@ WORKDIR /workdir
 COPY . .
 RUN pip install --upgrade pip && pip install \
     black \
+    descarga-datos \
     flake8 \
     geci-test-tools \
     mutmut==3.*\
@@ -10,4 +11,5 @@ RUN pip install --upgrade pip && pip install \
     pandas-stubs \
     pylint \
     pytest \
-    pytest-cov
+    pytest-cov \
+    requests
