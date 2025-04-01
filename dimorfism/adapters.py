@@ -13,4 +13,5 @@ def adapter_morphometry(data_path):
 
 
 def raw_data_adapter(raw_data_path):
-    pass
+    data = pd.read_csv(raw_data_path)
+    return data.rename(columns={"longitudPico": "bill_length"})
