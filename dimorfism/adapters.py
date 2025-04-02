@@ -9,16 +9,15 @@ def adapter_morphometry(data_path):
         "Tarsus",
     ]
     complete_dataframe = pd.read_csv(data_path)
-    complete_dataframe = translate_columns(complete_dataframe)
-    return complete_dataframe[wanted_colnames + ["sexo"]]
+    translated_dataframe = translate_columns(complete_dataframe)
+    return translated_dataframe[wanted_colnames + ["sexo"]]
 
 
 def translate_columns(raw_data):
-    data = raw_data
     name_equivalents = {
         "longitudPico": "bill_length",
         "altoPico": "bill_depth",
         "anchoCraneo": "head_width",
         "tarso": "Tarsus",
     }
-    return data.rename(columns=name_equivalents)
+    return raw_data.rename(columns=name_equivalents)
