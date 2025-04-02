@@ -56,7 +56,7 @@ jobs:
         files: ./coverage.xml
         verbose: true
     - name: Run model 
-      run: docker run --volume $PWD:/workdir --env BITBUCKET_USERNAME=$BITBUCKET_USERNAME --env BITBUCKET_PASSWORD=$BITBUCKET_PASSWORD islasgeci/dimorfismo_py:latest make install && make data/processed/model_parameters.json 
+      run: docker run --volume $PWD:/workdir --env BITBUCKET_USERNAME=$BITBUCKET_USERNAME --env BITBUCKET_PASSWORD=$BITBUCKET_PASSWORD islasgeci/dimorfismo_py:latest bash -e "make install && make data/processed/model_parameters.json"
     - name: Corre mutantes
       run: docker run --volume $PWD:/workdir islasgeci/dimorfismo_py:latest make mutants
     - name: Create/Update tag
