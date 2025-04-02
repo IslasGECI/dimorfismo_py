@@ -6,4 +6,4 @@ def test_tdp_adapter():
     obtained = raw_data_adapter(raw_data_path)
     obtained_columns = obtained.columns
     expected_columns = set(["bill_length", "bill_depth", "head_width", "Tarsus"])
-    assert expected_columns.is_subset(obtained_columns)
+    assert expected_columns.issubset(obtained_columns)
