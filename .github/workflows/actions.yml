@@ -28,6 +28,9 @@ jobs:
     name: Test Python module 🐍
     needs: build-image
     runs-on: ubuntu-latest
+    env:
+      BITBUCKET_USERNAME: ${{ secrets.BITBUCKET_USERNAME }}
+      BITBUCKET_PASSWORD: ${{ secrets.BITBUCKET_PASSWORD }}
     steps:
     - name: Copia repositorio
       uses: actions/checkout@main
@@ -52,6 +55,8 @@ jobs:
       with:
         files: ./coverage.xml
         verbose: true
+    - name: Run model 
+      run: docker run --volume $PWD:/workdir --env BITBUCKET_USERNAME=$BITBUCKET_USERNAME --env BITBUCKET_PASSWORD=$BITBUCKET_PASSWORD islasgeci/dimorfismo_py:latest make data/processed/model_parameters.json 
     - name: Corre mutantes
       run: docker run --volume $PWD:/workdir islasgeci/dimorfismo_py:latest make mutants
     - name: Create/Update tag
