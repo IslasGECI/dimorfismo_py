@@ -1,5 +1,5 @@
 from dimorfism.write_parameters import get_model_parameters, write_json_parameters
-from dimorfism.adapters import adapter_morphometry, xxraw_data_adapter
+from dimorfism.adapters import adapter_morphometry, translate_columns
 
 import typer
 
@@ -12,7 +12,7 @@ def write_model_parameters(
     parameters_path: str = typer.Option("Output parameters path"),
 ):
     selected_dataframe = adapter_morphometry(data_path)
-    selected_dataframe = xxraw_data_adapter(selected_dataframe)
+    selected_dataframe = translate_columns(selected_dataframe)
     parameters_dictionary = get_model_parameters(selected_dataframe)
     write_json_parameters(parameters_dictionary, parameters_path)
 
