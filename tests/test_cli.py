@@ -35,6 +35,18 @@ def tests_write_model_parameters():
 
     gtt.if_exist_remove(parameters_path)
 
+    data_path = "tests/data/tdp_morfometria_albatros.csv"
+    parameters_path = "tests/data/cli_model_parameters.json"
+
+    gtt.if_exist_remove(parameters_path)
+    result = runner.invoke(
+        app,
+        ["write-model-parameters", "--data-path", data_path, "--parameters-path", parameters_path],
+    )
+    assert result.exit_code == 0
+    gtt.assert_exist(parameters_path)
+    gtt.if_exist_remove(parameters_path)
+
 
 def test_version():
     result = runner.invoke(
