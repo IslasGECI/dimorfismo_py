@@ -67,6 +67,8 @@ jobs:
       run: echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
     - name: Sube latest a Docker Hub
       run: docker push islasgeci/dimorfismo_py:latest
+    - name: Rename image
+      run: docker tag islasgeci/dimorfismo_py:latest islasgeci/dimorfismo_py:${GITHUB_SHA:0:4}
     - name: Sube sha a Docker Hub
       run: docker push islasgeci/dimorfismo_py:${GITHUB_SHA:0:4}
     - uses: geekyeggo/delete-artifact@v5
