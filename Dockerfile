@@ -13,3 +13,5 @@ RUN pip install --upgrade pip && pip install \
     pytest \
     pytest-cov \
     requests
+
+RUN make install
